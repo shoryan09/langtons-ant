@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Langton's Ant Simulation</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Langton's Ant</h1>
+        <p>
+          A cellular automaton that follows simple rules to create complex
+          patterns
+        </p>
+      </header>
+
+      <div class="controls">
+        <button id="startBtn">Start</button>
+        <button id="pauseBtn" disabled>Pause</button>
+        <button id="resetBtn">Reset</button>
+        <button id="stepBtn">Step</button>
+
+        <div class="control-group">
+          <label for="speedSlider">Speed:</label>
+          <input type="range" id="speedSlider" min="1" max="100" value="50" />
+          <span id="speedValue">50ms</span>
+        </div>
+
+        <div class="control-group">
+          <label for="colorScheme">Color Scheme:</label>
+          <select id="colorScheme">
+            <option value="classic">Classic (B/W)</option>
+            <option value="retro">Retro</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="info">
+        <div class="stat">
+          <label>Steps:</label>
+          <span id="stepCount">0</span>
+        </div>
+        <div class="stat">
+          <label>Ant Position:</label>
+          <span id="antPosition">(50, 50)</span>
+        </div>
+        <div class="stat">
+          <label>Direction:</label>
+          <span id="antDirection">North</span>
+        </div>
+        <div class="stat">
+          <label>Black Cells:</label>
+          <span id="blackCells">0</span>
+        </div>
+      </div>
+
+      <div class="canvas-container">
+        <canvas id="antCanvas"></canvas>
+      </div>
+
+      <div class="rules">
+        <h3>Rules:</h3>
+        <ul>
+          <li>
+            If the ant is on a white cell, turn right 90° and change the cell to
+            black
+          </li>
+          <li>
+            If the ant is on a black cell, turn left 90° and change the cell to
+            white
+          </li>
+          <li>Move forward one cell</li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
